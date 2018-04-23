@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     fetchData: function (city) {
-      fetch('http://weerlive.nl/api/json-10min.php?locatie=' + city)
+      fetch('https://weerlive.nl/api/json-10min.php?locatie=' + city)
         .then(response => response.json())
         .then(json => {
           this.weatherData = json
