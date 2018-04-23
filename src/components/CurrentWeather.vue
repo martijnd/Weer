@@ -44,11 +44,11 @@ export default {
       maxTempToday: '13',
       minTempToday: '10',
       weatherData: null,
-      humidity: 'test',
-      windDirection: 'test',
-      windSpeed: '',
-      sunUptime: '',
-      sunDowntime: ''
+      humidity: '70%',
+      windDirection: 'ZW',
+      windSpeed: '21.6 km/uur',
+      sunUptime: '06:25',
+      sunDowntime: '20:56'
     }
   },
   methods: {
@@ -75,11 +75,12 @@ export default {
     },
     getImgUrl: function (status) {
       let image = require.context('../assets/images/', false, /\.svg$/)
-      return image('./' + status + '.svg')
+      // return image('./' + status + '.svg')
+      return image('./bewolkt.svg')
     }
   },
   mounted () {
-    // this.fetchData('Zoetermeer')
+    this.fetchData('Zoetermeer')
   }
 }
 </script>
