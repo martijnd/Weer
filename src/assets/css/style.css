@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:400,700");
+body {
+  width: calc(100vw - 5%);
+  height: calc(100vh - 5%); }
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: calc(100vw - 2 * 25px);
+  height: calc(100vh - 2 * 25px);
+  padding: 25px;
+  font-family: "Work Sans", Arial, sans-serif;
+  background: linear-gradient(to bottom, #12B0F2, #C8F1FF); }
+
+.search-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 200px; }
+
+.icon {
+  color: #E0F3FF;
+  font-size: 64px;
+  margin-right: 20px; }
+
+.city-input {
+  background: transparent;
+  border: none;
+  font-size: 66px;
+  font-weight: 700;
+  width: 400px;
+  color: #E0F3FF; }
+
+.weather-summary {
+  display: flex;
+  justify-content: center;
+  width: 100%; }
+
+.current-image {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px; }
+
+.minmaxtemp {
+  display: flex;
+  align-items: center; }
+
+.minmaxcontainer {
+  display: flex;
+  flex-direction: column; }
+
+.current-temp {
+  font-size: 36px;
+  color: #E0F3FF;
+  margin-right: 10px; }
+
+.current-status {
+  color: #E0F3FF;
+  font-size: 36px;
+  font-weight: 400; }
+
+.mintemp, .maxtemp {
+  font-size: 20px;
+  margin: 3px; }
+
+.maxtemp {
+  color: #E0F3FF; }
+
+.mintemp {
+  color: #888A8B; }
+
+/*# sourceMappingURL=style.css.map */
