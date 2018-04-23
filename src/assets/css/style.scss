@@ -3,8 +3,11 @@
 $fullpage-padding: 25px;
 $bgcolorstart: #12B0F2;
 $bgcolorend: #C8F1FF;
+$colorprimary: #0E5F90;
 $colorsecondary: #E0F3FF;
+$colortextlist: #63A3CA;
 $colormintemp: #888A8B;
+$info-bg: rgba(255,255,255,0.5);
 
 body {
   width: calc(100vw - 5%);
@@ -41,7 +44,7 @@ body {
   border: none;
   font-size: 66px;
   font-weight: 700;
-  width: 400px;
+  width: 500px;
   color: $colorsecondary;
 }
 
@@ -49,6 +52,7 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-bottom: 40px;
 }
 
 .current-image {
@@ -90,4 +94,42 @@ body {
 
 .mintemp {
   color: $colormintemp;
+}
+
+.weather-info-container {
+  display: flex;
+  justify-content: center;
+
+  .tomorrow {
+    background-color: $info-bg;
+  }
+  .today {
+    background-color: $info-bg;
+    width: 230px;
+    padding: 30px;
+    h3 {
+      font-size: 24px;
+      color: $colorprimary;
+      margin-bottom: 25px;
+    }
+    .info-item {
+      width: 100%;
+      line-height: 45px;
+      .key {
+        float: left;
+        color: $colortextlist;
+      }
+      .value {
+        float: right;
+      }
+    }
+  }
+  .aftertomorrow {
+    background-color: $info-bg;
+  }
+
+  .info-item {
+    width: 100%;
+  }
+
 }

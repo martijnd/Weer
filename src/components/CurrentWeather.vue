@@ -17,6 +17,18 @@
         </div>
       </div>
     </div>
+
+    <div class="weather-info-container">
+      <div class="today">
+        <h3>Meer informatie</h3>
+        <p class="info-item"><span class="key">Luchtvochtigheid</span><span class="value">{{ humidity }}</span></p>
+        <p class="info-item"><span class="key">Windrichting</span><span class="value">{{ windDirection }}</span></p>
+        <p class="info-item"><span class="key">Windsnelheid</span><span class="value">{{ windSpeed }}</span></p>
+        <p class="info-item"><span class="key">Zonsopgang</span><span class="value">{{ sunUptime }}</span></p>
+        <p class="info-item"><span class="key">Zonsondergang</span><span class="value">{{ sunDowntime }}</span></p>
+        <div style="clear: both"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -26,12 +38,17 @@ export default {
   data () {
     return {
       currentCity: 'Zoetermeer',
-      currentTemp: '13.6',
-      currentStatus: '',
+      currentTemp: '14',
+      currentStatus: 'Licht bewolkt',
       image: this.getImgUrl('halfbewolkt'),
-      maxTempToday: '',
-      minTempToday: '',
-      weatherData: null
+      maxTempToday: '13',
+      minTempToday: '10',
+      weatherData: null,
+      humidity: 'test',
+      windDirection: 'test',
+      windSpeed: '',
+      sunUptime: '',
+      sunDowntime: ''
     }
   },
   methods: {
@@ -50,6 +67,11 @@ export default {
       this.currentStatus = data.samenv
       this.minTempToday = data.d0tmin
       this.maxTempToday = data.d0tmax
+      this.humidity = data.lv + '%'
+      this.windDirection = data.windr
+      this.windSpeed = data.windkmh + ' km/uur'
+      this.sunUptime = data.sup
+      this.sunDowntime = data.sunder
     },
     getImgUrl: function (status) {
       let image = require.context('../assets/images/', false, /\.svg$/)

@@ -30,13 +30,14 @@ body {
   border: none;
   font-size: 66px;
   font-weight: 700;
-  width: 400px;
+  width: 500px;
   color: #E0F3FF; }
 
 .weather-summary {
   display: flex;
   justify-content: center;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 40px; }
 
 .current-image {
   width: 60px;
@@ -70,5 +71,31 @@ body {
 
 .mintemp {
   color: #888A8B; }
+
+.weather-info-container {
+  display: flex;
+  justify-content: center; }
+  .weather-info-container .tomorrow {
+    background-color: rgba(255, 255, 255, 0.5); }
+  .weather-info-container .today {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 230px;
+    padding: 30px; }
+    .weather-info-container .today h3 {
+      font-size: 24px;
+      color: #0E5F90;
+      margin-bottom: 25px; }
+    .weather-info-container .today .info-item {
+      width: 100%;
+      line-height: 45px; }
+      .weather-info-container .today .info-item .key {
+        float: left;
+        color: #63A3CA; }
+      .weather-info-container .today .info-item .value {
+        float: right; }
+  .weather-info-container .aftertomorrow {
+    background-color: rgba(255, 255, 255, 0.5); }
+  .weather-info-container .info-item {
+    width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
