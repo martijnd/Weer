@@ -68,8 +68,13 @@ export default {
         .then(json => {
           this.weatherData = json
           this.setData(this.weatherData)
+          setTimeout(() => {
           this.show = true
+          }, 800)
         })
+
+
+
     },
     setData: function (data) {
       data = data.liveweer[0]
@@ -93,7 +98,9 @@ export default {
   },
   mounted () {
     this.fetchData('Zoetermeer')
-    this.show = true
+    setTimeout(() => {
+      this.show = true
+    }, 200)
   }
 }
 </script>
