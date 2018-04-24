@@ -62,13 +62,13 @@ export default {
   },
   methods: {
     fetchData: function (city) {
-      this.show = !this.show
+      this.show = false
       fetch('http://weerlive.nl/api/json-10min.php?locatie=' + city)
         .then(response => response.json())
         .then(json => {
           this.weatherData = json
           this.setData(this.weatherData)
-          this.show = !this.show
+          this.show = true
         })
     },
     setData: function (data) {
@@ -92,7 +92,7 @@ export default {
   },
   mounted () {
     this.fetchData('Zoetermeer')
-    this.show = !this.show
+    this.show = true
   }
 }
 </script>
