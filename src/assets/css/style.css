@@ -87,6 +87,7 @@ body {
   .weather-info-container .today {
     background-color: rgba(255, 255, 255, 0.5);
     width: 230px;
+    min-height: 334px;
     padding: 30px; }
     .weather-info-container .today h3 {
       font-size: 24px;
@@ -104,5 +105,11 @@ body {
     background-color: rgba(255, 255, 255, 0.5); }
   .weather-info-container .info-item {
     width: 100%; }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s; }
+
+.fade-enter, .fade-leave-to {
+  opacity: 0; }
 
 /*# sourceMappingURL=style.css.map */

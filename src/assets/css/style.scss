@@ -115,6 +115,7 @@ body {
   .today {
     background-color: $info-bg;
     width: 230px;
+    min-height: 334px;
     padding: 30px;
     h3 {
       font-size: 24px;
@@ -141,4 +142,11 @@ body {
     width: 100%;
   }
 
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
