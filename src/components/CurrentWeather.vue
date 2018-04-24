@@ -63,7 +63,6 @@ export default {
   methods: {
     fetchData: function (city) {
       this.show = false
-
       fetch('https://weerlive.nl/api/json-10min.php?locatie=' + city)
         .then(response => response.json())
         .then(json => {
@@ -74,6 +73,7 @@ export default {
     },
     setData: function (data) {
       data = data.liveweer[0]
+      this.currentCity = data.plaats
       this.currentTemp = Math.round(data.temp) + '°'
       this.image = this.getImgUrl(data.image)
       this.currentStatus = data.samenv
