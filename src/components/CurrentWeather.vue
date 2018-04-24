@@ -62,11 +62,14 @@ export default {
   },
   methods: {
     fetchData: function (city) {
+      this.show = false
+
       fetch('https://weerlive.nl/api/json-10min.php?locatie=' + city)
         .then(response => response.json())
         .then(json => {
           this.weatherData = json
           this.setData(this.weatherData)
+          this.show = true
         })
     },
     setData: function (data) {
@@ -74,6 +77,7 @@ export default {
       this.currentTemp = Math.round(data.temp) + '°'
       this.image = this.getImgUrl(data.image)
       this.currentStatus = data.samenv
+      this.forecast = data.verw
       this.minTempToday = data.d0tmin
       this.maxTempToday = data.d0tmax
       this.humidity = data.lv + '%'
@@ -84,12 +88,12 @@ export default {
     },
     getImgUrl: function (status) {
       let image = require.context('../assets/images/', false, /\.svg$/)
-      // return image('./' + status + '.svg')
-      return image('./bewolkt.svg')
+      return image('./' + status + '.svg')
     }
   },
   mounted () {
     this.fetchData('Zoetermeer')
+    this.show = true
   }
 }
 </script>
