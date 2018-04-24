@@ -17,6 +17,7 @@
         </div>
       </div>
     </div>
+    <div class="verwachting">Verwachting: {{ forecast }}</div>
 
     <div class="weather-info-container">
       <div class="today">
@@ -40,6 +41,7 @@ export default {
       currentCity: 'Zoetermeer',
       currentTemp: '14',
       currentStatus: 'Licht bewolkt',
+      forecast: 'Bewolkt, plaatselijk wat regen',
       image: this.getImgUrl('halfbewolkt'),
       maxTempToday: '13',
       minTempToday: '10',
@@ -65,6 +67,7 @@ export default {
       this.currentTemp = Math.round(data.temp) + '°'
       this.image = this.getImgUrl(data.image)
       this.currentStatus = data.samenv
+      this.forecast = data.verw
       this.minTempToday = data.d0tmin
       this.maxTempToday = data.d0tmax
       this.humidity = data.lv + '%'
@@ -75,12 +78,11 @@ export default {
     },
     getImgUrl: function (status) {
       let image = require.context('../assets/images/', false, /\.svg$/)
-      // return image('./' + status + '.svg')
-      return image('./bewolkt.svg')
+      return image('./' + status + '.svg')
     }
   },
   mounted () {
-    this.fetchData('Zoetermeer')
+    // this.fetchData('Zoetermeer')
   }
 }
 </script>

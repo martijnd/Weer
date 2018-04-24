@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,700');
 
 $fullpage-padding: 25px;
 $bgcolorstart: #12B0F2;
@@ -8,6 +8,7 @@ $colorsecondary: #E0F3FF;
 $colortextlist: #63A3CA;
 $colormintemp: #888A8B;
 $info-bg: rgba(255,255,255,0.5);
+$image-size: 80px;
 
 body {
   width: calc(100vw - 5%);
@@ -52,12 +53,12 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .current-image {
-  width: 60px;
-  height: 60px;
+  width: $image-size;
+  height: $image-size;
   margin-right: 20px;
 }
 
@@ -80,7 +81,7 @@ body {
 .current-status {
   color: $colorsecondary;
   font-size: 36px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .mintemp, .maxtemp {
@@ -94,6 +95,14 @@ body {
 
 .mintemp {
   color: $colormintemp;
+}
+
+.verwachting {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  color: $colorsecondary;
+  font-size: 28px;
 }
 
 .weather-info-container {
