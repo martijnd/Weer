@@ -1,17 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,700");
 body {
-  width: calc(100vw - 5%);
-  height: calc(100vh - 5%); }
+  background: linear-gradient(to bottom, #12B0F2, #C8F1FF); }
 
 #app {
   display: flex;
   flex-direction: column;
   align-content: center;
-  width: calc(100vw - 2 * 25px);
   height: calc(100vh - 2 * 25px);
   padding: 25px;
-  font-family: "Work Sans", Arial, sans-serif;
-  background: linear-gradient(to bottom, #12B0F2, #C8F1FF); }
+  font-family: "Work Sans", Arial, sans-serif; }
 
 .search-area {
   display: flex;
@@ -22,13 +19,13 @@ body {
 
 .icon {
   color: #E0F3FF;
-  font-size: 64px;
+  font-size: 4em;
   margin-right: 20px; }
 
 .city-input {
   background: transparent;
   border: none;
-  font-size: 66px;
+  font-size: 4.4em;
   font-weight: 700;
   width: 450px;
   text-align: center;
@@ -60,7 +57,7 @@ body {
 
 .current-status {
   color: #E0F3FF;
-  font-size: 36px;
+  font-size: 2.3em;
   font-weight: 300; }
 
 .mintemp, .maxtemp {
@@ -73,39 +70,47 @@ body {
 .mintemp {
   color: #888A8B; }
 
-.verwachting {
+.forecast {
   display: flex;
   justify-content: center;
+  align-self: center;
   margin-bottom: 40px;
   color: #E0F3FF;
-  font-size: 28px; }
+  font-size: 1.5em;
+  max-width: 700px; }
 
 .weather-info-container {
   display: flex;
   justify-content: center; }
   .weather-info-container .tomorrow {
-    background-color: rgba(255, 255, 255, 0.5); }
-  .weather-info-container .today {
+    margin-top: 50px; }
+  .weather-info-container .today, .weather-info-container .tomorrow, .weather-info-container .aftertomorrow {
     background-color: rgba(255, 255, 255, 0.5);
     width: 230px;
-    min-height: 334px;
-    padding: 30px; }
-    .weather-info-container .today h3 {
+    min-height: 274px;
+    padding: 30px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5); }
+    .weather-info-container .today h3, .weather-info-container .tomorrow h3, .weather-info-container .aftertomorrow h3 {
+      text-align: center;
       font-size: 24px;
       color: #0E5F90;
       margin-bottom: 25px; }
-    .weather-info-container .today .info-item {
+    .weather-info-container .today h4, .weather-info-container .tomorrow h4, .weather-info-container .aftertomorrow h4 {
+      text-align: center;
+      font-size: 20px;
+      color: #0E5F90;
+      margin-bottom: 25px; }
+    .weather-info-container .today .info-item, .weather-info-container .tomorrow .info-item, .weather-info-container .aftertomorrow .info-item {
+      justify-content: space-between;
       width: 100%;
       line-height: 45px; }
-      .weather-info-container .today .info-item .key {
-        float: left;
+      .weather-info-container .today .info-item .key, .weather-info-container .tomorrow .info-item .key, .weather-info-container .aftertomorrow .info-item .key {
         color: #63A3CA; }
-      .weather-info-container .today .info-item .value {
+      .weather-info-container .today .info-item .value, .weather-info-container .tomorrow .info-item .value, .weather-info-container .aftertomorrow .info-item .value {
         float: right; }
   .weather-info-container .aftertomorrow {
-    background-color: rgba(255, 255, 255, 0.5); }
-  .weather-info-container .info-item {
-    width: 100%; }
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 50px; }
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity 1s; }
