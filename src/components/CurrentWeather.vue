@@ -64,7 +64,7 @@ export default {
   data () {
     return {
       geo_url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAQQIRT_HP-7WYIwzekNBxDdGuBJ_wCNYA',
-      weer_geo_url: 'http://weerlive.nl/api/json-data-10min.php?key=c595fe4400&locatie=',
+      weer_geo_url: 'https://weerlive.nl/api/json-data-10min.php?key=c595fe4400&locatie=',
       lat: '',
       long: '',
       show: false,
