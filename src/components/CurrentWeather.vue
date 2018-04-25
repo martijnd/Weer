@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div class="search-area">
-      <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
-      <input class="city-input" type="text" @keyup.enter="fetchData(currentCity)" v-model="currentCity" title="inputBox">
+      <span @click="fetchPosData" class="icon"><i class="fas fa-map-marker-alt"></i></span>
+      <input class="city-input" type="text" @keyup.enter="fetchData(currentCity)" v-model="currentCity" title="Voer een stad in">
     </div>
     <transition name="fade">
     <div v-if="show" class="weather-summary">
@@ -57,10 +57,16 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'CurrentWeather',
   data () {
     return {
+      geo_url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAQQIRT_HP-7WYIwzekNBxDdGuBJ_wCNYA',
+      weer_geo_url: 'http://weerlive.nl/api/json-data-10min.php?key=c595fe4400&locatie=',
+      lat: '',
+      long: '',
       show: false,
       currentCity: 'Zoetermeer',
       currentTemp: '14',
@@ -93,9 +99,22 @@ export default {
     setTitle (currentCity) {
       document.title = 'Het weer van ' + currentCity
     },
-    fetchData: function (city) {
+    getPosition () {
+
+    },
+    fetchPosData () {
       this.show = false
-      fetch('https://weerlive.nl/api/json-10min.php?locatie=' + city)
+      axios.post(this.geo_url)
+        .then(response => {
+          this.lat = response.data.location.lat
+          this.long = response.data.location.lng
+          let url = this.weer_geo_url + this.lat + ',' + this.long
+          console.log(url)
+          this.getJSON(url)
+        })
+    },
+    getJSON (url) {
+      fetch(url)
         .then(response => response.json())
         .then(json => {
           this.weatherData = json
@@ -105,7 +124,12 @@ export default {
           }, 800)
         })
     },
-    setData: function (data) {
+    fetchData: function (city) {
+      this.show = false
+      let url = 'https://weerlive.nl/api/json-10min.php?locatie=' + city
+      this.getJSON(url)
+    },
+    setData (data) {
       data = data.liveweer[0]
       this.currentCity = data.plaats
       this.setTitle(this.currentCity)
