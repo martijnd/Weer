@@ -63,8 +63,8 @@ export default {
   name: 'CurrentWeather',
   data () {
     return {
-      geo_url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAQQIRT_HP-7WYIwzekNBxDdGuBJ_wCNYA',
-      weer_geo_url: 'https://weerlive.nl/api/json-data-10min.php?key=c595fe4400&locatie=',
+      geo_url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + process.env.GEO_API_KEY,
+      weer_geo_url: 'https://weerlive.nl/api/json-data-10min.php?key=' + process.env.WEER_API_KEY + '&locatie=',
       lat: '',
       long: '',
       show: false,
